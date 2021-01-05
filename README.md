@@ -2,24 +2,20 @@
 
 主要针对于学习如何将各个模块进行封装处理，组件的模块化的项目
 
-## Project setup
+### 项目安装
 
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 编译并且热启动这个项目
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 编译并打包项目
 
 ```
 npm run build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
