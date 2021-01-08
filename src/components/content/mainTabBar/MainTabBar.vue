@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="MainTabBar">
     <router-view></router-view>
     <tab-bar>
       <tab-bar-item path="/home">
