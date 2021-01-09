@@ -11,7 +11,7 @@ module.exports = {
       .set('assets', resolve('src/assets'))
       .set('components', resolve('src/components'))
       .set('views', resolve('src/views'))
-      .set('common', resolve('src/components/common'))
+      .set('common', resolve('src/common'))
       .set('api', resolve('src/api'))
   },
 

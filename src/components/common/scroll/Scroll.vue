@@ -61,6 +61,9 @@ export default {
       this.scroll.on('pullingUp', () => {
         this.$emit('pullUpLoad')
       })
+    },
+    getSaveY() {
+      return this.scroll && this.scroll.y
     }
   }
 }

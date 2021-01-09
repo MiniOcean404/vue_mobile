@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item">
+  <div class="goods-item" @click="clickGoDetail">
     <img :src="goodsItem.show.img" alt="" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
@@ -19,6 +19,11 @@ export default {
         return {}
       }
     }
+  },
+  methods: {
+    clickGoDetail() {
+      this.$router.push('/detail/' + this.goodsItem.iid)
+    }
   }
 }
 </script>
@@ -26,6 +31,7 @@ export default {
 <style lang="scss">
 .goods-item {
   width: 48%;
+
   font-size: 12px;
   margin-bottom: 10px;
   img {
@@ -36,8 +42,8 @@ export default {
   .goods-info {
     text-align: center;
     p {
-      overflow: hidden;
       white-space: nowrap;
+      overflow: hidden;
       text-overflow: ellipsis;
       margin-bottom: 3px;
     }
