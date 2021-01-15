@@ -5,6 +5,10 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+// 自定义插件导入
+import toast from 'components/common/toast'
+Vue.use(toast)
+
 new Vue({
   router,
   store,

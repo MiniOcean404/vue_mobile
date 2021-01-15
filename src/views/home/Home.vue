@@ -40,7 +40,6 @@ import Scroll from 'components/common/scroll/Scroll'
 // 导入业务组件
 import TabControl from 'components/content/tabControl/TabControl'
 import GoodList from 'components/content/goods/GoodList'
-import BackTop from 'components/content/backtop/BackTop'
 
 // 导入子视图组件
 import HomeSwiper from 'views/home/childComps/HomeSwiper'
@@ -50,8 +49,12 @@ import Feature from 'views/home/childComps/Feature'
 // 导入请求js文件
 import { getHomeMultiData, getHomeGoods } from 'api/home.js'
 
+// 导入混入js
+import { backTop } from 'common/mixin'
+
 export default {
   name: 'home',
+  mixins: [backTop],
   components: {
     NavBar,
     HomeSwiper,
@@ -59,10 +62,8 @@ export default {
     Feature,
     TabControl,
     GoodList,
-    Scroll,
-    BackTop
+    Scroll
   },
-
   data() {
     return {
       banners: [],
@@ -82,13 +83,11 @@ export default {
         }
       },
       currentType: 'pop',
-      isShowBackTop: false,
       tabOffsetTop: 0,
       isTabshow: false,
       saveY: 0
     }
   },
-
   created() {
     // 请求多种数据
     this.getHomeMultiData()
@@ -144,9 +143,7 @@ export default {
         this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop
       })
     },
-    /**
-     * tabcontrol----子向父传值的方法
-     */
+    //  子向父传值的方法
     tabClick(index) {
       switch (index) {
         case 0:
@@ -172,10 +169,7 @@ export default {
         this.$refs.scroll.refresh()
       })
     },
-    // 回到顶部
-    backClick() {
-      this.$refs.scroll.scrollTo(0, 0, 500)
-    },
+
     // scroll传递数据监听的方法
     contentScroll(position) {
       this.isShowBackTop = -position.y > 1000 ? true : false

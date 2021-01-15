@@ -2,6 +2,8 @@
 
 主要针对于学习如何将各个模块进行封装处理，组件的模块化的项目
 
+swiper
+DetailBaseInfo
 ### 项目安装
 
 ```
@@ -19,3 +21,4 @@ npm run serve
 ```
 npm run build
 ```
+

@@ -35,6 +35,7 @@ export default {
   methods: {
     clickToggleIndex(index) {
       this.currentIndex = index
+      this.$emit('toTitle', index)
     },
     backClick() {
       this.$router.back()
@@ -54,12 +55,14 @@ export default {
   }
   .titles {
     display: flex;
+    color: #666;
     font-size: 15px;
     span {
       flex: 1;
     }
   }
 }
+
 .active {
   color: $color-tint;
 }

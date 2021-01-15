@@ -1,9 +1,29 @@
 <template>
-  <div>
-    购物车
+  <div id="cart">
+    <CartNav></CartNav>
+    <CartList></CartList>
+    <CartBottomBar></CartBottomBar>
   </div>
 </template>
+
 <script>
-export default {}
+// 导入子组件
+import CartNav from './childComp/CartNav'
+import CartList from './childComp/CartList'
+import CartBottomBar from './childComp/CartBottomBar'
+
+export default {
+  name: 'Cart',
+  components: {
+    CartNav,
+    CartList,
+    CartBottomBar
+  }
+}
 </script>
-<style lang=""></style>
+
+<style lang="scss">
+#cart {
+  height: 100vh;
+}
+</style>

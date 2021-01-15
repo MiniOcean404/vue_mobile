@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item" @click="clickGoDetail">
-    <img :src="goodsItem.show.img" alt="" />
+    <img :src="showImage" alt="" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
       <span class="price"> {{ goodsItem.price }}</span>
@@ -18,6 +18,11 @@ export default {
       default() {
         return {}
       }
+    }
+  },
+  computed: {
+    showImage() {
+      return this.goodsItem.image || this.goodsItem.show.img
     }
   },
   methods: {
@@ -61,7 +66,7 @@ export default {
         width: 14px;
         height: 14px;
         // 00/14px/14px 分别是 左右xy距离 和左右拉伸大小
-        background: url('~assets/img/common/collect.svg') 0 0/14px 14px;
+        background: url('~assets/img/common/collect.svg') 0 0/100%;
       }
     }
   }
