@@ -7,7 +7,7 @@ function resolve(dir) {
 
 // 配置文件路径的别名----重新设置就需要重新启动一下项目
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue_shop/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue_mobile/' : '/',
 
   chainWebpack: config => {
     config.resolve.alias
